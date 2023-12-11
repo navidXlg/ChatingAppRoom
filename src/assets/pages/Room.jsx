@@ -5,6 +5,7 @@ import client from "../../appWriteConfig";
 import Header from "../Componants/Header";
 import { BsX } from "react-icons/bs";
 import { useAuth } from "../Hooks/useAuth";
+import classNames from "classnames";
 
 
 
@@ -18,12 +19,11 @@ export default function Room(){
 
     useEffect(() => {
          getMessage();
-         console.log("done")
          const unsubscribe = client.subscribe(`databases.${DATABASE_ID}.collections.${COLLECTION_ID}.documents`, response => {
             // Callback will be executed on changes for documents A and all files.
 
                 if(response.events.includes("databases.*.collections.*.documents.*.create")){
-                    setMessages( pervState => [ response.payload.body , ...pervState]);
+                    setMessages( pervState => [ response.payload , ...pervState]);
                 }
 
                 if(response.events.includes("databases.*.collections.*.documents.*.delete")){
@@ -44,8 +44,10 @@ export default function Room(){
             userId : user.$id,
             userName : user.name
         };
-        await databases.createDocument( DATABASE_ID, COLLECTION_ID, ID.unique(), payload);
+
+        console.log(payload);
         setMessageBody("");
+        await databases.createDocument( DATABASE_ID, COLLECTION_ID, ID.unique(), payload);
     }
 
     const getMessage = async () => {
@@ -64,13 +66,10 @@ export default function Room(){
     };
 
     const style = (item) => {
-        console.log(user) 
-        console.log(item) 
-
-      return item.userName === user.userName ?  "flex justify-start gap-4 items-center mb-2 flex-row-reverse":
+      return item.userName === user.name ?  "flex justify-start gap-4 items-center mb-2 flex-row-reverse":
      "flex justify-start gap-4 items-center mb-2 ";
-
     };
+
 
     return <div className="flex h-screen flex-col bg-gray-100">
             <div className="bg-gradient-to-r from-blue-500 to-purple-500 py-4">
@@ -101,7 +100,7 @@ export default function Room(){
                 value={messageBody}
                 onChange={(event) => setMessageBody(event.target.value)}
                 />
-                <button type="submit" className="ml-2 rounded-lg bg-blue-500 px-4 py-2 text-white">Send</button>
+                <button type="submit" className="ml-2 rounded-lg hover:bg-blue-700 bg-blue-500 px-4 py-2 text-white">Send</button>
             </form>
     </div>
 }
