@@ -44,8 +44,6 @@ export default function Room(){
             userId : user.$id,
             userName : user.name
         };
-
-        console.log(payload);
         setMessageBody("");
         await databases.createDocument( DATABASE_ID, COLLECTION_ID, ID.unique(), payload);
     }
@@ -62,6 +60,7 @@ export default function Room(){
     };
 
     const handelDelete = async (id) => {
+        console.log(id)
         await databases.deleteDocument(DATABASE_ID, COLLECTION_ID, id);
     };
 
