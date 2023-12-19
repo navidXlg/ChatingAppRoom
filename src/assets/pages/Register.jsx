@@ -1,6 +1,7 @@
 import{ useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../Hooks/useAuth';
+import classNames from 'classnames';
 // import RegistrationComplete from './RegistrationComplete';
 
 
@@ -27,12 +28,28 @@ export default function Register(){
         }
             
   },[]);
+  if(model){
+    setTimeout(()=>{
+        setModel(false);
+        navigate("/");
+    },6000)
+}
 
-//   const classProp = model ? "min-h-screen flex items-stretch text-white opacity-50" : "min-h-screen flex items-stretch text-white" ;
+
+
+
 
   return (
     <>
-    <section className = "min-h-screen flex items-stretch text-white">
+    <section className = "min-h-screen relative flex items-stretch text-white ">
+            { 
+            model &&  
+            <div className=' flex items-center justify-between z-10 animate-enter absolute top-10 left-4 bg-white w-1/5 h-16 hover:animate-enter rounded-md shadow-sm '>
+                <span className='w-4  h-full z-30 bg-green-700'></span>
+                <p className='-ml-10 text-gray-700'>Registration completed</p>
+                <div>X</div>
+            </div>
+            }
         <div className="lg:flex w-1/2 hidden bg-gray-500 bg-no-repeat bg-cover relative items-center">
             <div className="absolute bg-black opacity-60 inset-0 z-0"></div>
             <div className="w-full px-24 z-10">

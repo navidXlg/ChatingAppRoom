@@ -60,7 +60,6 @@ export default function Room(){
     };
 
     const handelDelete = async (id) => {
-        console.log(id)
         await databases.deleteDocument(DATABASE_ID, COLLECTION_ID, id);
     };
 
