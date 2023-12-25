@@ -5,7 +5,6 @@ import client from "../../appWriteConfig";
 import Header from "../Componants/Header";
 import { BsX } from "react-icons/bs";
 import { useAuth } from "../Hooks/useAuth";
-import classNames from "classnames";
 
 
 
@@ -44,8 +43,11 @@ export default function Room(){
             userId : user.$id,
             userName : user.name
         };
+
         setMessageBody("");
-        await databases.createDocument( DATABASE_ID, COLLECTION_ID, ID.unique(), payload);
+        await databases.createDocument( DATABASE_ID, COLLECTION_ID, ID.unique(), payload)
+        .then(item => console.log(item))
+        .catch(err => console.log(err))
     }
 
     const getMessage = async () => {
