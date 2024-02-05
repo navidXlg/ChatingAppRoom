@@ -115,7 +115,8 @@ export default function ContextProvider({children}){
                 </div> 
                 :children }
            </authContext.Provider>
-    }
+    
+    };
 
 
 

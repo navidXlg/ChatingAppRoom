@@ -46,8 +46,6 @@ export default function Room(){
 
         setMessageBody("");
         await databases.createDocument( DATABASE_ID, COLLECTION_ID, ID.unique(), payload)
-        .then(item => console.log(item))
-        .catch(err => console.log(err))
     }
 
     const getMessage = async () => {
