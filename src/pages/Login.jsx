@@ -2,6 +2,7 @@ import{ useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../Hooks/useAuth';
 import { bouncy } from 'ldrs';
+import InputCustom from '../Componants/InputCustom';
 bouncy.register();
 
 
@@ -16,8 +17,10 @@ export default function Login(){
   
   const navigate = useNavigate();
   const handelFormChange = (event) => {
+
     let name = event.target.type;
     let value = event.target.value;
+    console.log(name, value)
     setCredintal({...credintial, [name]:value})
   };
 
@@ -34,7 +37,7 @@ export default function Login(){
   };
 
   return (
-    <section className="min-h-screen flex items-stretch  text-white ">
+    <section className="font-poppins min-h-screen flex items-stretch  text-white ">
         <div className="lg:flex w-1/2 hidden bg-gray-500 bg-no-repeat bg-cover relative items-center">
             <div className="absolute bg-black opacity-60 inset-0 z-0"></div>
             <div className="w-full px-24 z-10">
@@ -71,16 +74,11 @@ export default function Login(){
                 </p>
                 <form className="sm:w-2/3 w-full px-4 lg:px-0 mx-auto"
                 onSubmit={handelSubmit}>
-                    <div className="pb-2 pt-4">
-                        <input type="email" name="email" id="email" placeholder="Email" className="block w-full p-4 text-lg rounded-lg bg-black"
-                        value={credintial.email} 
-                        onChange={handelFormChange}
-                        />
+                    <div className="mb-2 mt-4">
+                        <InputCustom type= "email" name= "email" id= "email" placeholder= "Email" value={credintial.email} onChange = {handelFormChange}/>
                     </div>
-                    <div className="pb-2 pt-4">
-                        <input className="block w-full p-4 text-lg rounded-lg bg-black" type="password" name="password" id="password" placeholder="Password"
-                        value={credintial.password} 
-                        onChange={handelFormChange}/>
+                     <div className="pb-2 pt-4">
+                        <InputCustom placeholder = "Password" type = "password" name = "password" id = "password" value={credintial.password} onChange = {handelFormChange}/>
                     </div>
                     <div className="text-right text-gray-400 hover:underline hover:text-gray-100">
                         <Link to="/register">Registration</Link>

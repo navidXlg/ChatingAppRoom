@@ -1,7 +1,7 @@
 import{ useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../Hooks/useAuth';
-import classNames from 'classnames';
+import InputCustom from '../Componants/InputCustom';
 // import RegistrationComplete from './RegistrationComplete';
 
 
@@ -84,24 +84,17 @@ export default function Register(){
                 <form className="sm:w-2/3 w-full px-4 lg:px-0 mx-auto"
                 onSubmit={(event) => {userRegister(event, credintial)}}>
                     <div className="pb-2 pt-4">
-                        <input type="text" name="name" id="name" placeholder="name" className="block w-full p-3 text-base rounded-lg bg-black"
-                        value={credintial.name} 
-                        onChange={handelFormChange}/>
+                        <InputCustom type="text" name="name" id="name" placeholder="name" value={credintial.name} onChange={handelFormChange}/> 
                     </div>
                     <div className="pb-2 pt-4">
-                        <input className="block w-full p-3 text-base rounded-lg bg-black" type="email" name="email" id="email" placeholder="Email"
-                        value={credintial.email} 
-                        onChange={handelFormChange}/>
+                        <InputCustom type="email" name="email" id="email" placeholder="Email" value={credintial.email} onChange={handelFormChange}/>
                     </div>
                     <div className="pb-2 pt-4">
-                        <input className="block w-full p-3 text-base rounded-lg bg-black" type="password" name="password" id="password" placeholder="Password"
-                        value={credintial.password} 
-                        onChange={handelFormChange}/>
+                        <InputCustom name="password" id="password" placeholder="Password" type="password" value={credintial.password} onChange={handelFormChange}/>
                     </div>
                     <div className="pb-2 pt-4">
-                        <input className="block w-full p-3 text-base rounded-lg bg-black" type="password" name="passwordConifrm" id="passwordConifrm" placeholder="Confirm password"
-                        value={credintial.passwordConifrm} 
-                        onChange={handelFormChange}/>
+                        <InputCustom name="passwordConifrm" id="passwordConifrm" placeholder="Confirm password"
+                        type="password" value={credintial.passwordConifrm} onChange={handelFormChange}/>
                     </div>
                     <div className="text-right text-gray-400 hover:underline hover:text-gray-100">
                         <Link to="/">Log In</Link>

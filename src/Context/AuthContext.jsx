@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState} from "react";
-import { account } from "../../appWriteConfig";
+import { account } from "../appWriteConfig";
 import { useNavigate } from "react-router-dom";
 import { ID } from "appwrite";
 import { quantum } from 'ldrs'
@@ -116,7 +116,7 @@ export default function ContextProvider({children}){
                 :children }
            </authContext.Provider>
     
-    };
+    }
 
 
 

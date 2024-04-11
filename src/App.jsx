@@ -1,9 +1,9 @@
 import { BrowserRouter as Router , Routes , Route } from "react-router-dom";
-import ContextProvider from "./assets/Context/AuthContext";
-import PrivateRoutes from "./assets/Componants/PrivrcyComponant";
-import Room from "./assets/pages/Room";
-import Login from "./assets/pages/Login";
-import Register from "./assets/pages/Register";
+import ContextProvider from "./Context/AuthContext";
+import PrivateRoutes from "./Componants/PrivrcyComponant";
+import Room from "./pages/Room";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 function App() {
 

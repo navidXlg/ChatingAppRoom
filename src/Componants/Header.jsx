@@ -17,5 +17,5 @@ export default function Header(){
                 <CiLogout />
                 </button>
            </section>
-};
+}
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { databases, DATABASE_ID, COLLECTION_ID } from "../../appWriteConfig";
+import { databases, DATABASE_ID, COLLECTION_ID } from "../appWriteConfig"
 import { ID, Query } from "appwrite";
-import client from "../../appWriteConfig";
+import client from "../appWriteConfig";
 import Header from "../Componants/Header";
 import { BsX } from "react-icons/bs";
 import { useAuth } from "../Hooks/useAuth";
