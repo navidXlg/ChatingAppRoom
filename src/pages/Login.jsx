@@ -37,12 +37,39 @@ export default function Login(){
   };
 
   return (
-    <section className="font-poppins min-h-screen flex items-stretch  text-white ">
-        <div className="lg:flex w-1/2 hidden bg-gray-500 bg-no-repeat bg-cover relative items-center">
-            <div className="absolute bg-black opacity-60 inset-0 z-0"></div>
-            <div className="w-full px-24 z-10">
-                <h1 className="text-5xl font-bold text-left tracking-wide">Keep it special</h1>
-                <p className="text-3xl my-4">Capture your personal memory in unique way, anywhere.</p>
+    <section className="font-poppins min-h-screen flex items-stretch text-white ">
+
+        <div className="lg:flex w-1/2 hidden bg-gray-500 bg-no-repeat bg-cover relative items-center body">
+            <div className="absolute bg-gray-600 opacity-60 inset-0 z-0"></div>
+            <div className="w-full px-24 z-10 container">
+                <div className='title'>
+                    <h1 className="text-5xl  font-bold text-left tracking-wide">Ghost</h1>
+                    <p className="text-center mt-10 text-2xl text-black">Get connection with your friends</p>
+                </div>
+                <div className='ghost'>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+
+                <div className='ghost first w-[3vmin] h-[6vmin]'>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+
+
+                <div className='ghost secound w-[9vmin] h-[14vmin] duration-75'>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
             </div>
             <div className="bottom-0 absolute p-4 text-center right-0 left-0 flex justify-center space-x-4">
                 <span>
@@ -56,6 +83,8 @@ export default function Login(){
                 </span>
             </div>
         </div>
+
+
         <div className="lg:w-1/2 w-full flex items-center justify-center text-center md:px-16 px-0 z-0 bg-slate-500">
             <div className="absolute lg:hidden z-10 inset-0 bg-gray-500 bg-no-repeat bg-cover items-center">
                 <div className="absolute bg-black opacity-60 inset-0 z-0"></div>
