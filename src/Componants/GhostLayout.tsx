@@ -8,7 +8,7 @@ export default function GhostLayout () {
 
     return (<div className="lg:flex w-1/2 hidden bg-gray-500 bg-no-repeat bg-cover relative items-center body">
     <div className="absolute bg-gray-600 opacity-60 inset-0 z-0"></div>
-    <div className="w-full px-24 z-10 container">
+    <div className="w-full px-24 z-10 container ">
         <div className='title'>
             <h1 className="text-5xl  font-bold text-left tracking-wide">Ghost</h1>
             <p className="text-center mt-10 font-bold text-2xl text-black">Get connection with your friends</p>
@@ -21,7 +21,7 @@ export default function GhostLayout () {
             <div></div>
         </div> 
 
-        <div className='ghost first w-[3vmin] h-[6vmin]'>
+        <div className='ghost first w-[6vmin] h-[12vmin]'>
             <div></div>
             <div></div>
             <div></div>
@@ -30,7 +30,7 @@ export default function GhostLayout () {
         </div>
 
 
-        <div className='ghost secound w-[9vmin] h-[14vmin] duration-75'>
+        <div className='ghost secound w-[9vmin] h-[14vmin]'>
             <div></div>
             <div></div>
             <div></div>

@@ -40,9 +40,9 @@ export default function Login(){
   return (
     <section className="font-poppins min-h-screen flex items-stretch text-white ">
         <GhostLayout/>
-        <div className="lg:w-1/2 w-full flex items-center justify-center text-center md:px-16 px-0 z-0 bg-slate-500">
-            <div className="absolute lg:hidden z-10 inset-0 bg-gray-500 bg-no-repeat bg-cover items-center">
-                <div className="absolute bg-black opacity-60 inset-0 z-0"></div>
+        <div className="lg:w-1/2  w-full flex items-center justify-center text-center md:px-16 px-0 z-0 bg-gray-900">
+            <div className="absolute lg:hidden z-10 inset-0  bg-no-repeat bg-cover items-center">
+                <div className="absolute  opacity-60 inset-0 z-0"></div>
             </div>
             <div className="w-full py-6 z-20">
                 <h1 className="my-6 text-3xl uppercase">

@@ -42,7 +42,7 @@ export default function Register(){
 
   return (
     <>
-    <section className = "min-h-screen relative flex items-stretch text-white ">
+    <section className = "min-h-screen font-poppins relative flex items-stretch text-white ">
             { 
             model &&  
             <div className=' flex items-center justify-between z-10 animate-enter absolute top-10 left-4 bg-white w-1/5 h-16 hover:animate-enter rounded-md shadow-sm '>
@@ -52,9 +52,9 @@ export default function Register(){
             </div>
             }
             <GhostLayout/>
-        <div className="lg:w-1/2 w-full flex items-center justify-center text-center md:px-16 px-0 z-0 bg-slate-500">
-            <div className="absolute lg:hidden z-10 inset-0 bg-gray-500 bg-no-repeat bg-cover items-center">
-                <div className="absolute bg-black opacity-60 inset-0 z-0"></div>
+        <div className="lg:w-1/2 w-full flex items-center justify-center text-center md:px-16 px-0 z-0 bg-gray-900">
+            <div className="absolute lg:hidden z-10 inset-0 bg-no-repeat bg-cover items-center">
+                <div className="absolute  opacity-60 inset-0 z-0"></div>
             </div>
             <div className="w-full py-2 z-20">
                 <h1 className="my-6 text-3xl ">
